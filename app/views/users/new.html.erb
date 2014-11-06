@@ -1,0 +1,11 @@
+<% if @flag %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1><%= t(:"New user") %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t(:'Show all users'), users_path %>
+
+
+

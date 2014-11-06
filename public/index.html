@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Домашнее задание 3</title>
+    <style type="text/css">
+		* {
+			margin:0;
+			padding:0;
+		}
+		.header	{
+			text-align:center;
+			background-color:#00FFFF;
+			width:100%;
+		}
+		body {
+			width:100%;
+			height:100%;
+		}
+		table {
+			width:100%;
+		}
+		#login_block {
+			text-align:right;
+			height:207px;
+			vertical-align:top;
+		}
+		#main {
+			vertical-align:top
+		}
+		.element {
+			background-color:yellow
+		}
+	</style>
+    <script type="text/javascript">
+	  current_user=null;
+	  cur_item=null
+	  edit=null
+	  function onload() {
+		if (window.XMLHttpRequest)
+		  {var xhr = new XMLHttpRequest(); }
+		else
+		  {var xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		xhr.open("GET","/signin",true);
+		xhr.send(null);
+		var content_block=document.getElementById("content_block");
+		content_block.innerHTML="Дождитесь окончательной загрузки страницы."
+		xhr.onreadystatechange = function () 
+		{
+			var done = 4, ok = 200;
+			if (xhr.readyState == done && xhr.status == ok) 
+			{
+				var content_block=document.getElementById("content_block");
+				content_block.innerHTML=""
+				var login_block=document.getElementById("login_block");
+				var s="", i=0;
+				while (!(xhr.responseText[i-1]=='>' && xhr.responseText[i-2]=='y' && xhr.responseText[i-3]=="d"))
+					i++;
+				while (!(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='p' && xhr.responseText[i+2]==" " && xhr.responseText[i+3]=='i' && xhr.responseText[i+4]=='d') && !(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='/' && xhr.responseText[i+2]=="b" && xhr.responseText[i+3]=='o' && xhr.responseText[i+4]=='d') && !(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='h' && xhr.responseText[i+2]=="1" && xhr.responseText[i+3]==' ' && xhr.responseText[i+4]=='i'))
+				{
+					s+=xhr.responseText[i];
+					i++;
+				}
+				if (xhr.responseText[i]=='<' && xhr.responseText[i+1]=='h' && xhr.responseText[i+2]=="1" && xhr.responseText[i+3]==' ' && xhr.responseText[i+4]=='i')
+				{
+					while (xhr.responseText[i]!='>')
+						i++;
+					i+=1;
+					var div=document.getElementById("main").children[0]
+					div.innerHTML+="<input type='button' onclick='add()' value='Добавить публикацию'>"
+					current_user=""
+					while (!(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='/' && xhr.responseText[i+2]=='h'))
+					{
+						current_user+=xhr.responseText[i];
+						i++;
+					}
+				}
+				if (xhr.responseText[i]=='<' && xhr.responseText[i+1]=='p' && xhr.responseText[i+2]==" " && xhr.responseText[i+3]=='i' && xhr.responseText[i+4]=='d')
+				{
+					while (!(xhr.responseText[i-1]=='>' && xhr.responseText[i-2]=='p' && xhr.responseText[i-3]=="/"))
+						i++;
+					while (!(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='/' && xhr.responseText[i+2]=="b" && xhr.responseText[i+3]=='o' && xhr.responseText[i+4]=='d'))
+						{
+							s+=xhr.responseText[i];
+							i++;
+						}
+				}
+				login_block.innerHTML = s;
+			}
+		}
+		if (current_user)
+		{
+			var div=document.getElementById("main").children[0]
+			div.innerHTML+="<input type='button' onclick='add()' value='Добавить публикацию'>"
+		}
+	  }
+	  function add() {
+		main.innerHTML="<form>Название публикации:<input type='text' name='title_field'><br>Автор публикации:<input type='text' name='author_field'><br>Тема публикации:<input type='text' name='subject_field'><br>Формат файла:<input type='text' name='format_field'><br>Язык:<input type='text' name='language_field'><br>Название файла:<input type='text' name='source_field'><br><input type='button' value='Очистить поля' onclick='myreset()'><input type='button' value='Сохранить' onclick='save()'><input type='button' value='Отмена' onclick='cancel()'></form>"
+		main.innerHTML+="Добавление"
+	 }
+	  function save() {
+		if (window.XMLHttpRequest)
+		  { var xhr = new XMLHttpRequest(); }
+			else
+		  { var xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		var title=document.forms[0].title_field.value
+		var author=document.forms[0].author_field.value
+		var subject=document.forms[0].subject_field.value
+		var format=document.forms[0].format_field.value
+		var language=document.forms[0].language_field.value
+		var source=document.forms[0].source_field.value
+		xhr.open("GET","/add?form[title]="+title+"&form[author]="+author+"&form[subject]="+subject+"&form[format]="+format+"&form[language]="+language+"&form[source]="+source,true);
+		xhr.send(null);
+		xhr.onreadystatechange = function () 
+		{
+			var done = 4, ok = 200;
+			if (xhr.readyState == done && xhr.status == ok) 
+			{
+				content_block=document.getElementById("content_block");
+				content_block.innerHTML = xhr.responseText;
+			}
+		}
+	  }
+	  function myreset() {
+		var form=document.getElementById("main").children[0];
+		var l=form.elements.length-3;
+		for (var i=0;i<l;i++)
+		{
+			form.elements[i].value="";
+		}
+		var div=document.getElementById("content_block")
+		div.innerHTML=""
+	  }
+	  function cancel() {
+		var div=document.getElementById("main")
+		div.innerHTML="<form>Искать<input type='text' name='find_field'><select name='find_category'><option value='1'>по названию<option value='2'>по автору<option value='3'>по теме<option value='4'>по формату данных<option value='5'>по языку<option value='6'>по пользователю</select><input type='button' onclick='poisk()' value='Поиск'><br></form>"
+		div.innerHTML+="<input type='button' onclick='add()' value='Добавить публикацию'>"	
+	  }
+	  function signin() {
+		if (window.XMLHttpRequest)
+		  { var xhr = new XMLHttpRequest(); }
+			else
+		  { var xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		var login=document.getElementById("session_login").value;
+		var pass=document.getElementById("session_password").value;
+		xhr.open("POST","/sessions?session[login]="+login+"&session[password]="+pass,true);
+		xhr.send(null);
+		xhr.onreadystatechange = function () 
+		{
+			var done = 4, ok = 200;
+			if (xhr.readyState == done && xhr.status == ok) 
+			{
+				login_block=document.getElementById("login_block");
+				var s="", i=0;
+				while (!(xhr.responseText[i-1]=='>' && xhr.responseText[i-2]=='y' && xhr.responseText[i-3]=="d")) 
+					i++;
+				while (!(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='/' && xhr.responseText[i+2]=="b" && xhr.responseText[i+3]=='o' && xhr.responseText[i+4]=='d') && !(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='h' && xhr.responseText[i+2]=="1" && xhr.responseText[i+3]==' ' && xhr.responseText[i+4]=='i'))
+				{
+					s+=xhr.responseText[i];
+					i++;
+				}
+				if (xhr.responseText[i]=='<' && xhr.responseText[i+1]=='h' && xhr.responseText[i+2]=="1" && xhr.responseText[i+3]==' ' && xhr.responseText[i+4]=='i')
+				{
+					while (xhr.responseText[i]!='>')
+						i++;
+					i+=1;
+					var div=document.getElementById("main")
+					div.innerHTML+="<input type='button' onclick='add()' value='Добавить публикацию'>"
+					while (!(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='/' && xhr.responseText[i+2]=='h'))
+					{
+						current_user+=xhr.responseText[i];
+						i++;
+					}
+				}
+				login_block.innerHTML = s;
+				if (current_user && cur_item!=null)
+				{
+					div=document.getElementById("content_block")
+					s=div.innerHTML;
+					var str=""
+					i=0;
+					var l=s.length
+					while (i<l && !(s[i]=='>' && s[i+1]=='<'))
+					{
+						str+=s[i]
+						i++;
+					}
+					if (i!=l)
+					{
+						str+=s[i]
+						str+="<button onclick='delete_item()'>Удалить публикацию</button>"
+						str+="<button onclick='add_for_edit()'>Редактировать публикацию</button>"
+						i+=1
+						while (i<l)
+						{
+							str+=s[i];
+							i++
+						}
+					}
+					div.innerHTML=str
+				}
+			}
+		}
+	  }
+	  function signout()
+	  {
+		current_user=null;
+		if (window.XMLHttpRequest)
+		  { var xhr = new XMLHttpRequest(); }
+			else
+		  { var xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		xhr.open("GET","/signout",true);
+		xhr.send(null);
+		xhr.onreadystatechange = function () 
+		{
+			var done = 4, ok = 200;
+			if (xhr.readyState == done && xhr.status == ok) 
+			{
+				login_block=document.getElementById("login_block");
+				var s="", i=0;
+				while (!(xhr.responseText[i-1]=='>' && xhr.responseText[i-2]=='y' && xhr.responseText[i-3]=="d")) 
+					i++;
+				while (!(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='/' && xhr.responseText[i+2]=="b" && xhr.responseText[i+3]=='o' && xhr.responseText[i+4]=='d') && !(xhr.responseText[i]=='<' && xhr.responseText[i+1]=='h' && xhr.responseText[i+2]=="1" && xhr.responseText[i+3]==' ' && xhr.responseText[i+4]=='i'))
+				{
+					s+=xhr.responseText[i];
+					i++;
+				}
+				var div=document.getElementById("main")
+				div.innerHTML="<form>Искать<input type='text' name='find_field'><select name='find_category'><option value='1'>по названию<option value='2'>по автору<option value='3'>по теме<option value='4'>по формату данных<option value='5'>по языку<option value='6'>по пользователю</select><input type='button' onclick='poisk()' value='Поиск'><br></form>"
+				login_block.innerHTML = s;
+				if (cur_item!=null)
+				{
+					div=document.getElementById("content_block")
+					s=div.innerHTML;
+					var str=""
+					i=0;
+					var l=s.length
+					while (i<l && !(s[i]=='>' && s[i+1]=='<'))
+					{
+						str+=s[i]
+						i++;
+					}
+					if (i!=l)
+					{
+						str+=s[i]
+						i+=1
+						while (i<l && !(s[i]=='>' && s[i-1]=='n' && s[i+1]=='<' && s[i+2]=='d' ))
+							i+=1
+						i+=1
+						while (i<l)
+						{
+							str+=s[i]
+							i++;
+						}
+					}
+					div.innerHTML=str
+				}
+			}
+		}
+	  }
+      function poisk() {
+        if (window.XMLHttpRequest)
+          { var xhr = new XMLHttpRequest(); }
+        else
+          { var xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		if (cur_item==null)
+		{
+			find_name=document.getElementById("main").children[0].find_field.value;
+			find_category=document.getElementById("main").children[0].find_category.value;
+        }
+		else
+		{
+			document.getElementById("main").children[0].find_field.value=find_name;
+			document.getElementById("main").children[0].find_category.value=find_category;
+		}
+		xhr.open("GET","/poisk?form[find_item]="+find_name+"&form[find_category]="+find_category,true);
+        xhr.send(null);
+		xhr.onreadystatechange = function () 
+			{
+				var done = 4, ok = 200;
+				if (xhr.readyState == done && xhr.status == ok) 
+				{
+					if (xhr.responseText[0]=='Э')
+					{
+						var info = document.getElementById('content_block');
+						info.innerHTML=xhr.responseText
+					}
+					else
+					{
+						my_obj=JSON.parse(xhr.response);
+						var len=my_obj.length
+						obrab(my_obj,0,len);
+					}
+				}
+			}
+		cur_item=null;
+      }
+	  function obrab(obj,start,len) {
+		var div=document.getElementById("content_block")
+		if (cur_item==null)
+		{	
+			div.innerHTML="Результаты запроса: Элементы, у которых '"
+			switch (find_category)
+			{
+				case '1':div.innerHTML+="Название";break;
+				case '2':div.innerHTML+="Автор";break;
+				case '3':div.innerHTML+="Тема";break;
+				case '4':div.innerHTML+="Формат";break;
+				case '5':div.innerHTML+="Язык";break;
+				case '6':div.innerHTML+="Опубликовавший";break;
+			}
+			div.innerHTML+="' ->"+find_name+"<br>"
+			var s;
+			for (var i=start;i<len;i++)
+			{
+				s="show("+i.toFixed(0)+")"
+				div.innerHTML+="<div class='element'>"+(i+1).toFixed(0)+") Название<u><h3 onclick="+s+">"+obj[i].title+"</h3></u><br>Формат<h6>"+obj[i].format+"</h6>Добавил<h6>"+obj[i].publisher+"</h6>Имя файла<h6>"+obj[i].source+"</h6></div><br>"
+			}
+			if (document.getElementById("main").children[0].find_field)
+				document.getElementById("main").children[0].find_field.value=find_name;
+			if (document.getElementById("main").children[0].find_category)
+			document.getElementById("main").children[0].find_category.value=find_category;
+		}
+		else
+		{
+			div.innerHTML="<button onclick='back_to_list()'>Назад</button>"
+			if (current_user) {
+			div.innerHTML+="<button onclick='delete_item()'>Удалить публикацию</button>"
+			div.innerHTML+="<button onclick='add_for_edit()'>Редактировать публикацию</button>"
+			}
+			var s1,s2,s3,s4,s5,s6;//s7;
+			for (var i=start;i<len;i++)
+			{
+				s1="poisk_by_link('1','"+i.toFixed(0)+"')"
+				s2="poisk_by_link('2','"+i.toFixed(0)+"')"
+				s3="poisk_by_link('3','"+i.toFixed(0)+"')"
+				s4="poisk_by_link('4','"+i.toFixed(0)+"')"
+				s5="poisk_by_link('5','"+i.toFixed(0)+"')"
+				s6="poisk_by_link('6','"+i.toFixed(0)+"')"
+				//s7="poisk_by_link('7','"+i.toFixed(0)+"')"
+				div.innerHTML+="<div class='element'>Название<u><h3 onclick="+s1+">"+obj[i].title+"</h3></u><br>Автор<u><h3 onclick="+s2+">"+obj[i].author+"</h3></u><br>Тема<u><h3 onclick="+s3+">"+obj[i].subject+"</h3></u><br>Формат<u><h3 onclick="+s4+">"+obj[i].format+"</h3></u><br>Язык<u><h3 onclick="+s5+">"+obj[i].language+"</h3></u><br>Добавил<u><h3 onclick="+s6+">"+obj[i].publisher+"</h3></u><br>Ссылка на ресурс<br><a href='/files/"+obj[i].source+"."+obj[i].format+"' target='_blank'>"+obj[i].source+"."+obj[i].format+"</a><br></div><br>"
+			}
+		}
+	  }
+	  function show(num) {
+		cur_item=num
+		var div=document.getElementById("content_block")
+		obrab(my_obj,num,num+1)
+	  }
+	  function back_to_list() {
+		cur_item=null;
+		if (edit==1)
+		{
+			edit=0
+			cancel()
+		}
+		obrab(my_obj,0,my_obj.length)
+	  }
+	  function poisk_by_link(num,item) {
+		if (window.XMLHttpRequest)
+          { var xhr = new XMLHttpRequest(); }
+        else
+          { var xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		switch(num) {
+			case '1':xhr.open("GET","/poisk?form[find_item]="+my_obj[item].title+"&form[find_category]="+num,true);
+			find_name=my_obj[item].title;
+			find_category=num;break;
+			case '2':xhr.open("GET","/poisk?form[find_item]="+my_obj[item].author+"&form[find_category]="+num,true);
+			find_name=my_obj[item].author;
+			find_category=num;break;
+			case '3':xhr.open("GET","/poisk?form[find_item]="+my_obj[item].subject+"&form[find_category]="+num,true);
+			find_name=my_obj[item].subject;
+			find_category=num;break;
+			case '4':xhr.open("GET","/poisk?form[find_item]="+my_obj[item].format+"&form[find_category]="+num,true);
+			find_name=my_obj[item].format;
+			find_category=num;break;
+			case '5':xhr.open("GET","/poisk?form[find_item]="+my_obj[item].language+"&form[find_category]="+num,true);
+			find_name=my_obj[item].language;
+			find_category=num;break;
+			case '6':xhr.open("GET","/poisk?form[find_item]="+my_obj[item].publisher+"&form[find_category]="+num,true);
+			find_name=my_obj[item].publisher;
+			find_category=num;break;
+			//case '7':xhr.open("GET","/poisk?form[find_item]="+my_obj[item].title+"&form[find_category]="+num,true);break;
+		}
+		cur_item=null;
+        xhr.send(null);
+		xhr.onreadystatechange = function () 
+			{
+				var done = 4, ok = 200;
+				if (xhr.readyState == done && xhr.status == ok) 
+				{
+					if (xhr.responseText[0]=='Э')
+					{
+						var info = document.getElementById('content_block');
+						info.innerHTML=xhr.responseText
+					}
+					else
+					{
+						my_obj=JSON.parse(xhr.response);
+						var len=my_obj.length
+						obrab(my_obj,0,len);
+					}
+				}
+			}
+	  }
+	  function delete_item() {
+		if (window.XMLHttpRequest)
+          { var xhr = new XMLHttpRequest(); }
+        else
+          { var xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		var s=my_obj[cur_item].id.toFixed(0)
+		xhr.open("GET","/delete?item="+s,true);
+        xhr.send(null);
+		xhr.onreadystatechange = function () 
+			{
+				var done = 4, ok = 200;
+				if (xhr.readyState == done && xhr.status == ok) 
+				{
+					var info = document.getElementById('content_block');
+					info.innerHTML = xhr.responseText+"<br><button onclick='poisk()'>Назад</button>";
+					cancel();
+				}
+			}
+	  }
+	  function add_for_edit() {
+		edit=1
+		main.innerHTML="<form>Название публикации:<input type='text' name='title_field' value="+my_obj[cur_item].title+"><br>Автор публикации:<input type='text' name='author_field' value="+my_obj[cur_item].author+"><br>Тема публикации:<input type='text' name='subject_field' value="+my_obj[cur_item].subject+"><br>Формат файла:<input type='text' name='format_field' value="+my_obj[cur_item].format+"><br>Язык:<input type='text' name='language_field' value="+my_obj[cur_item].language+"><br>Название файла:<input type='text' name='source_field' value="+my_obj[cur_item].source+"><br><input type='button' value='Очистить поля' onclick='myreset()'><input type='button' value='Сохранить' onclick='edit_item()'><input type='button' value='Отмена' onclick='cancel()'></form>"
+		main.innerHTML+="Редактирование"
+	 }
+	  function edit_item() {
+		if (window.XMLHttpRequest)
+          { var xhr = new XMLHttpRequest(); }
+        else
+          { var xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		var title=document.forms[0].title_field.value
+		var author=document.forms[0].author_field.value
+		var subject=document.forms[0].subject_field.value
+		var format=document.forms[0].format_field.value
+		var language=document.forms[0].language_field.value
+		var source=document.forms[0].source_field.value
+		var s=my_obj[cur_item].id.toFixed(0)
+		xhr.open("GET","/edit?form[id]="+s+"&form[title]="+title+"&form[author]="+author+"&form[subject]="+subject+"&form[format]="+format+"&form[language]="+language+"&form[source]="+source,true);
+		xhr.send(null);
+		xhr.onreadystatechange = function () 
+			{
+				var done = 4, ok = 200;
+				if (xhr.readyState == done && xhr.status == ok) 
+				{
+					var info = document.getElementById('content_block');
+					info.innerHTML = xhr.responseText+"<br><button onclick='poisk()'>Назад</button>";
+					cancel();
+				}
+			}
+	  }
+    </script>
+  </head>
+  <body onload="onload()">
+	<div class="header">
+		<h1>Домашнее задание 3</h1>
+		<h2>Зачётная работа "Электронная библиотека"</h2>
+		<h3>Халайджи Алексея, группа ИУ6-31</h3>
+	</div>
+	<hr><hr>
+	<table>
+	<tr>
+	<td id="main">
+		<form>
+			Искать<input type="text" name="find_field">
+			<select name="find_category">
+			<option value="1">по названию
+			<option value="2">по автору
+			<option value="3">по теме
+			<option value="4">по формату данных
+			<option value="5">по языку
+			<option value="6">по пользователю
+			</select>
+			<input type="button" onclick="poisk()" value="Поиск">
+			<br>
+		</form>
+	</td>
+	<td id="login_block"></td></tr>
+	<tr><td colspan="2" id="content_block">
+	</td></tr>
+	</table>
+  </body>
+</html>

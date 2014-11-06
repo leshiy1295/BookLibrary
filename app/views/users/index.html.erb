@@ -1,0 +1,26 @@
+﻿<h1><%= t(:"Listing users") %></h1>
+
+<table>
+  <tr>
+    <th><%= t(:"Login") %></th>
+    <th></th>
+    <% if current_user %>
+		<th></th>
+		<th></th>
+	<% end %>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.login %></td>
+    <td><%= link_to t(:'Show'), user %></td>
+	<% if current_user %>
+		<td><%= link_to t(:'Edit'), edit_user_path(user) %></td>
+		<td><%= link_to t(:'Destroy'), user, confirm: t(:'Are you sure?'), method: :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to t(:'New User'), new_user_path %>

@@ -1,0 +1,280 @@
+Unable to load query, underlying cause No such file to load -- query 
+
+ C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:312:in `depend_on'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:751:in `try_to_load_dependency'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:766:in `block in require_fixture_classes'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:763:in `each'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:763:in `require_fixture_classes'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:746:in `fixtures'
+C:/Sites/DZ3/test/test_helper.rb:10:in `<class:TestCase>'
+C:/Sites/DZ3/test/test_helper.rb:5:in `<top (required)>'
+C:/Sites/DZ3/test/unit/bibl_test.rb:1:in `require'
+C:/Sites/DZ3/test/unit/bibl_test.rb:1:in `<top (required)>'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:15:in `require'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:15:in `block in <main>'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:4:in `select'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:4:in `<main>'
+Unable to load query, underlying cause No such file to load -- query 
+
+ C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:312:in `depend_on'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:751:in `try_to_load_dependency'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:766:in `block in require_fixture_classes'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:763:in `each'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:763:in `require_fixture_classes'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:746:in `fixtures'
+C:/Sites/DZ3/test/test_helper.rb:10:in `<class:TestCase>'
+C:/Sites/DZ3/test/test_helper.rb:5:in `<top (required)>'
+C:/Sites/DZ3/test/functional/dz3_controller_test.rb:1:in `require'
+C:/Sites/DZ3/test/functional/dz3_controller_test.rb:1:in `<top (required)>'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:15:in `require'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:15:in `block in <main>'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:4:in `select'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:4:in `<main>'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (15.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (15.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (15.6ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (46.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (46.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (15.6ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:46:16', '2012-12-25 12:46:16', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Unable to load query, underlying cause No such file to load -- query 
+
+ C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:312:in `depend_on'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:751:in `try_to_load_dependency'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:766:in `block in require_fixture_classes'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:763:in `each'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:763:in `require_fixture_classes'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:746:in `fixtures'
+C:/Sites/DZ3/test/test_helper.rb:10:in `<class:TestCase>'
+C:/Sites/DZ3/test/test_helper.rb:5:in `<top (required)>'
+C:/Sites/DZ3/test/unit/bibl_test.rb:1:in `require'
+C:/Sites/DZ3/test/unit/bibl_test.rb:1:in `<top (required)>'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:15:in `require'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:15:in `block in <main>'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:4:in `select'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:4:in `<main>'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:55:26', '2012-12-25 12:55:26', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:55:26', '2012-12-25 12:55:26', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:55:26', '2012-12-25 12:55:26', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:55:26', '2012-12-25 12:55:26', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:55:26', '2012-12-25 12:55:26', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:55:26', '2012-12-25 12:55:26', 980190962)
+  [1m[35m (31.2ms)[0m  rollback transaction
+Unable to load query, underlying cause No such file to load -- query 
+
+ C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:312:in `depend_on'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:751:in `try_to_load_dependency'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:766:in `block in require_fixture_classes'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:763:in `each'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:763:in `require_fixture_classes'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.1/lib/active_record/fixtures.rb:746:in `fixtures'
+C:/Sites/DZ3/test/test_helper.rb:10:in `<class:TestCase>'
+C:/Sites/DZ3/test/test_helper.rb:5:in `<top (required)>'
+C:/Sites/DZ3/test/unit/bibl_test.rb:1:in `require'
+C:/Sites/DZ3/test/unit/bibl_test.rb:1:in `<top (required)>'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:15:in `require'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:15:in `block in <main>'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:4:in `select'
+C:/Programs/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.0.3/lib/rake/rake_test_loader.rb:4:in `<main>'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:56:35', '2012-12-25 12:56:35', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:56:35', '2012-12-25 12:56:35', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:56:35', '2012-12-25 12:56:35', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:56:35', '2012-12-25 12:56:35', 980190962)
+  [1m[35m (15.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "bibls"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:56:35', '2012-12-25 12:56:35', 980190962)[0m
+SQLite3::SQLException: table bibls has no column named date: INSERT INTO "bibls" ("source", "title", "author", "subject", "publisher", "date", "format", "language", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2012-12-23 17:31:30.000000', 'MyString', 'MyString', '2012-12-25 12:56:35', '2012-12-25 12:56:35', 980190962)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."login" = 'a' LIMIT 1[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO "users" ("created_at", "login", "password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 25 Dec 2012 12:58:38 UTC +00:00], ["login", "a"], ["password", nil], ["updated_at", Tue, 25 Dec 2012 12:58:38 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."login" = 'a' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("created_at", "login", "password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 25 Dec 2012 12:58:38 UTC +00:00], ["login", "a"], ["password", "a"], ["updated_at", Tue, 25 Dec 2012 12:58:38 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."login" = 'a' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."login" = 'a' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("created_at", "login", "password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 25 Dec 2012 12:58:38 UTC +00:00], ["login", "a"], ["password", "a"], ["updated_at", Tue, 25 Dec 2012 12:58:38 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = 'a' LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'v' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."login" = 'a' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."login" = '' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."login" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."login" = 'a' LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO "users" ("created_at", "login", "password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 25 Dec 2012 13:01:27 UTC +00:00], ["login", "a"], ["password", "a"], ["updated_at", Tue, 25 Dec 2012 13:01:27 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."login" = 'a' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."login" = 'a' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("created_at", "login", "password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 25 Dec 2012 13:01:27 UTC +00:00], ["login", "a"], ["password", "a"], ["updated_at", Tue, 25 Dec 2012 13:01:27 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'a' LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = 'v' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by Dz3Controller#add as HTML
+Redirected to http://test.host/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by Dz3Controller#delete as HTML
+Redirected to http://test.host/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by Dz3Controller#edit as HTML
+Redirected to http://test.host/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by Dz3Controller#poisk as HTML
+Completed 500 Internal Server Error in 0ms
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#create as HTML
+Completed 500 Internal Server Error in 0ms
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#new as HTML
+Completed 200 OK in 94ms (Views: 93.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction

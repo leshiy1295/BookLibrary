@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t(:"Login")+":" %></b>
+  <%= @user.login %>
+</p>
+
+
+<% if current_user %>
+	<%= link_to t(:'Edit'), edit_user_path(@user) %> |
+<% end %>
+<%= link_to t(:'Back'), users_path %>

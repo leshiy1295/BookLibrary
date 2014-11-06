@@ -1,0 +1,25 @@
+﻿<% if !current_user %>
+	<h1><%= t(:"Sign in") %></h1>
+	<%= form_for(:session, :url => "sessions#create") do |f| %>
+	  <div class="field">
+		<%= f.label t(:"Login") %><br />
+		<%= f.text_field :login %>
+	  </div>
+	  <div class="field">
+		<%= f.label t(:"Password") %><br />
+		<%= f.password_field :password %>
+	  </div>
+	  <div class="actions">
+		<input type="button" onclick="signin()" value=<%= t(:"Sign in") %>>
+	  </div>
+	  <p id="notice"><%= notice %></p>
+	<% end %>
+	<p><%= t(:"New user?") %> <a target="_blank" href="<%= signup_path %>"><%= t(:"Sign up now!") %></a></p>
+<% else %>
+	<input type="button" onclick="signout()" value=<%= t(:"Sign out") %>>
+	<h1><%= t(:"You logged in as") %> <%= User.find_by_id(current_user).login%></h1>
+	<h3><%= t(:"For relog firstly log out") %></h3>
+	<a target="_blank" href="<%= signup_path %>"><%= t(:"Registrate new user") %></a>
+	<h1 id="current_user"><%= current_user %></h1>
+<% end %>
+

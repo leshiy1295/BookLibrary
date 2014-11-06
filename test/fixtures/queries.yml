@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  find_field: MyString
+  find_category: 1
+  result: MyText
+
+two:
+  find_field: MyString
+  find_category: 1
+  result: MyText
